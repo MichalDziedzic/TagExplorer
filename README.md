@@ -4,7 +4,7 @@ zadanie rekrutacyjne-Przegladarka Tagów
 
 ## Wprowadzenie
 
-Ten projekt to aplikacja webowa stworzona przy użyciu Reacta, TypeScript, Tailwind CSS oraz Material-UI (MUI). Celem aplikacji jest zapewnienie interaktywnego i responsywnego interfejsu użytkownika, który jest zarówno estetyczny, jak i funkcjonalny. Projekt wykorzystuje nowoczesne narzędzia i praktyki programistyczne, aby zapewnić wysoką jakość i łatwość w utrzymaniu kodu.
+Ten projekt to aplikacja webowa stworzona przy użyciu Reacta, TypeScript, Tailwind CSS . Celem aplikacji jest zapewnienie interaktywnego i responsywnego interfejsu użytkownika, który jest zarówno estetyczny, jak i funkcjonalny. Projekt wykorzystuje nowoczesne narzędzia i praktyki programistyczne, aby zapewnić wysoką jakość i łatwość w utrzymaniu kodu.
 
 ## Wymagania Systemowe
 
@@ -21,6 +21,4 @@ Aby rozpocząć pracę z projektem, wykonaj poniższe kroki:
    git clone https://example.com/project-repo.git
    cd project-repo
    npm install / npm start
-
-
-
+   ```
