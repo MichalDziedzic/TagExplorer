@@ -7,14 +7,24 @@ const fetchTags = async ({
   sortBy,
   sortOrder,
 }: TagsQueryParams): Promise<TagsResponse> => {
-  const response = await fetch(
-    `https://api.stackexchange.com/2.3/tags?page=${page}&pagesize=${pageSize}&order=${sortOrder}&sort=${sortBy}&site=stackoverflow`
-  )
+  try {
+    const response = await fetch(
+      `https://api.stackexchange.com/2.3/tags?page=${page}&pagesize=${pageSize}&order=${sortOrder}&sort=${sortBy}&site=stackoverflow`
+    )
 
-  if (!response.ok) {
-    throw new Error("Network response was not ok")
+    if (!response.ok) {
+      const errorResponse = await response.json()
+      throw new Error(errorResponse.error_message || "Unknown error occurred")
+    }
+
+    return await response.json()
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(error.message)
+    } else {
+      throw new Error("Unknown error occurred")
+    }
   }
-  return response.json()
 }
 
 export function useTags({

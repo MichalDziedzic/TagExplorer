@@ -1,5 +1,5 @@
 import React from "react"
-import { Tag } from "../../types/interfaces" // Załóżmy, że Tag został odpowiednio zaimportowany
+import { Tag } from "../../types/interfaces"
 
 interface TagsTableBodyProps {
   items: Tag[]
