@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { TagsTable } from "./components/TagsTable"
+import { TagsTable } from "./components/tables/TagsTable"
 import "./App.css"
 
 const queryClient = new QueryClient()

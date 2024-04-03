@@ -1,7 +1,8 @@
 import { useTableSettingsStore } from "../store/useTableSettingsStore"
+import { SortBy, SortOrder } from "../types/types"
 
 const SortingControl = () => {
-  const { setSortBy, setSortOrder } = useTableSettingsStore()
+  const { setSortBy, setSortOrder, sortBy, sortOrder } = useTableSettingsStore()
 
   return (
     <div className="flex space-x-2">
@@ -14,10 +15,9 @@ const SortingControl = () => {
         </label>
         <select
           id="sortBy"
-          onChange={(e) =>
-            setSortBy(e.target.value as "name" | "popular" | "activity")
-          }
-          className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value as SortBy)}
+          className="mt-1 block w-full py-2 px-3 border bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         >
           <option value="name">Nazwa</option>
           <option value="popular">Popularność</option>
@@ -33,7 +33,8 @@ const SortingControl = () => {
         </label>
         <select
           id="sortOrder"
-          onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value as SortOrder)}
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         >
           <option value="asc">Rosnąco</option>
