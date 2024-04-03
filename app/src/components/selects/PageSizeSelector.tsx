@@ -27,7 +27,7 @@ const PageSizeSelector: React.FC<PageSizeSelectorProps> = ({
         id="pageSize"
         value={pageSize}
         onChange={handleChangePageSize}
-        className="ml-2 border-gray-300 shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md"
+        className="ml-2 border-gray-300 shadow-sm  rounded-md focus:outline-none"
       />
     </label>
   )
