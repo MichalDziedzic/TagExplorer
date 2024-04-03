@@ -1,9 +1,16 @@
-import { useTableSettingsStore } from "../../store/useTableSettingsStore"
+import React from "react"
+
+interface PageSizeSelectorProps {
+  pageSize: number
+  setPageSize: (size: number) => void
+}
 
 const DEFAULT_PAGE_SIZE = 10
-const PageSizeSelector: React.FC = () => {
-  const { pageSize, setPageSize } = useTableSettingsStore()
 
+const PageSizeSelector: React.FC<PageSizeSelectorProps> = ({
+  pageSize,
+  setPageSize,
+}) => {
   const handleChangePageSize = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSize = Number(event.target.value)
     setPageSize(newSize || DEFAULT_PAGE_SIZE)

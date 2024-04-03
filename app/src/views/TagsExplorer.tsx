@@ -8,7 +8,6 @@ import ErrorDisplay from "../components/ErrorDisplay"
 
 export const TagsExplorer = () => {
   const { page, pageSize, sortBy, sortOrder, setPage } = useTableSettingsStore()
-
   const { data, isLoading, error } = useTags({
     page,
     pageSize,
@@ -29,7 +28,7 @@ export const TagsExplorer = () => {
       ) : (
         <>
           <div className="w-full max-w-4xl px-4 my-4">
-            <TagsTable />
+            <TagsTable items={data?.items || []} />
           </div>
 
           <div className="w-full max-w-4xl px-4">

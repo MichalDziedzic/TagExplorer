@@ -1,25 +1,22 @@
-import { useTags } from "../../hooks/useTags"
-import { useTableSettingsStore } from "../../store/useTableSettingsStore"
+import React from "react"
 import TagsTableHeader from "./TagsTableHeader"
 import TagsTableBody from "./TagsTableBody"
+import { Tag } from "../../types/interfaces"
 
-export const TagsTable = () => {
-  const { page, pageSize, sortBy, sortOrder } = useTableSettingsStore()
+interface TagsTableProps {
+  items: Tag[]
+  headers?: string[]
+}
 
-  const { data } = useTags({
-    page,
-    pageSize,
-    sortBy,
-    sortOrder,
-  })
-
-  const tagsTableHeaders = ["Nazwa Tagu", "Liczba Postów"]
-
+export const TagsTable: React.FC<TagsTableProps> = ({
+  items,
+  headers = ["Nazwa Tagu", "Liczba Postów"],
+}) => {
   return (
     <div>
       <table className="min-w-full divide-y divide-gray-200">
-        <TagsTableHeader headers={tagsTableHeaders} />
-        <TagsTableBody items={data?.items || []} />
+        <TagsTableHeader headers={headers} />
+        <TagsTableBody items={items} />
       </table>
     </div>
   )
